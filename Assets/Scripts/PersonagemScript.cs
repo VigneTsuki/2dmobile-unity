@@ -85,11 +85,18 @@ public class PersonagemScript : MonoBehaviour
     public void Pulo()
     {
         if (noChao)
-        {
+        {   
             rb.AddForce(new Vector2(0f, forcaPulo), ForceMode2D.Impulse);
             anim.SetBool("jump", true);
             noChao = false;
         }
+    }
+
+    public void SuperPulo()
+    {
+        rb.AddForce(new Vector2(0f, 15), ForceMode2D.Impulse);
+        anim.SetBool("jump", true);
+        noChao = false;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -140,6 +147,11 @@ public class PersonagemScript : MonoBehaviour
         GameController.instance.totalScore = 0;
         GameController.instance.canvas.enabled = false;
         GameController.instance.RefreshScreen();
+    }
+
+    public void GanharVida()
+    {
+        GameController.instance.AlterarVida(+1);
     }
 
     public void SomarPontos()
