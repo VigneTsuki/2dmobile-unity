@@ -101,4 +101,14 @@ public class GameController : MonoBehaviour
     {
         FindObjectOfType<PersonagemScript>().Pulo();
     }
+
+    public void MovimentarDireita()
+    {
+        FindObjectOfType<PersonagemScript>().MovimentarDireita();
+    }
+
+    public void MovimentarEsquerda()
+    {
+        FindObjectOfType<PersonagemScript>().MovimentarEsquerda();
+    }
 }

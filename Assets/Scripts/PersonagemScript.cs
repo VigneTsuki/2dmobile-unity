@@ -92,11 +92,32 @@ public class PersonagemScript : MonoBehaviour
         }
     }
 
+    public void MovimentarDireita()
+    {
+        Vector3 movimento = new Vector3(1, 0f, 0f);
+        transform.position += movimento * Time.deltaTime * velocidade;
+        anim.SetBool("walk", true);
+        transform.eulerAngles = new Vector3(0f, 0f, 0f);
+    }
+
+    public void MovimentarEsquerda()
+    {
+        Vector3 movimento = new Vector3(-1, 0f, 0f);
+        transform.position += movimento * Time.deltaTime * velocidade;
+        anim.SetBool("walk", true);
+        transform.eulerAngles = new Vector3(0f, 180f, 0f);
+    }
+
     public void SuperPulo()
     {
         rb.AddForce(new Vector2(0f, 15), ForceMode2D.Impulse);
         anim.SetBool("jump", true);
         noChao = false;
+    }
+
+    public void EncerraAnimacaoMovimento()
+    {
+        anim.SetBool("walk", false);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
