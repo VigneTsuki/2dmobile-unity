@@ -33,32 +33,11 @@ public class PersonagemScript : MonoBehaviour
 
     void Update()
     {
-        //Pulo();
         GameController.instance.RefreshScreen();
     }
 
     void Movimentacao()
     {
-        //Vector3 movimento = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
-        //transform.position += movimento * Time.deltaTime * velocidade;
-
-        //if (Input.GetAxis("Horizontal") > 0f)
-        //{
-        //    anim.SetBool("walk", true);
-        //    transform.eulerAngles = new Vector3(0f, 0f, 0f);
-        //}
-
-        //if (Input.GetAxis("Horizontal") < 0f)
-        //{
-        //    anim.SetBool("walk", true);
-        //    transform.eulerAngles = new Vector3(0f, 180f, 0f);
-        //}
-
-        //if (Input.GetAxis("Horizontal") == 0f)
-        //{
-        //    anim.SetBool("walk", false);
-        //}
-
         movimentoHorizontal = GameController.instance.joystick.Horizontal;
 
         Vector3 movimento = new Vector3(movimentoHorizontal, 0f, 0f);

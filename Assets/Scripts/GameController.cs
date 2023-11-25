@@ -96,19 +96,4 @@ public class GameController : MonoBehaviour
             }
         }
     }
-
-    public void Pulo()
-    {
-        FindObjectOfType<PersonagemScript>().Pulo();
-    }
-
-    public void MovimentarDireita()
-    {
-        FindObjectOfType<PersonagemScript>().MovimentarDireita();
-    }
-
-    public void MovimentarEsquerda()
-    {
-        FindObjectOfType<PersonagemScript>().MovimentarEsquerda();
-    }
 }
